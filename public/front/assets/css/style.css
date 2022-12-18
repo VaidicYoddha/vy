@@ -1,0 +1,55 @@
+/*================================================================================
+	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+	Version: 2.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+================================================================================
+
+NOTE:
+------
+PLACE HERE YOUR OWN SCSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+
+
+.instagram {
+    background: #f09433;
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+}
+
+.posttitle {
+	background: linear-gradient(to right, #5100ff 0%, #ff5500 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+  text-align: justify;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 0.5rem;
+}
+
+.sptitle {
+  
+    position: relative;
+    display: inline-block;
+    font-size: 1.5375rem;
+    padding: 0.5rem;
+
+}
+
+.textdata {
+	color:rgb(255, 0, 0),
+}
+
+#ht {
+  color:#000000 ;
+  height: auto;
+  background:linear-gradient(135deg, #da96da 0%,#64a4e4 100%);
+}
+
+#htnav {
+  color:#000000 ;
+  height: auto;
+  background:linear-gradient(135deg, #ff6a00 0%,#ffd500 100%);
+}
