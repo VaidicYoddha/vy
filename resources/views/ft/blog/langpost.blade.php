@@ -23,16 +23,16 @@ Vaidic Yoddha
                              <select class="select2 form-select" onchange="location.href=this.value;" id="select2-basic">
                                <option value="">Language</option>
                               @foreach ($languages as $item)
-                              <option value="{{ route('language.slug',$item->slug)}}  " >{{ $item->name}}</option>                           
+                              <option value="{{ route('language.slug',$item->slug)}}  " >{{ $item->name}}</option>
                               @endforeach
                             </select>
-                          </div>                
+                          </div>
                             <div class="col-md-6 col-lg-4">
-                              
-                              <h4> 
+
+                              <h4>
                               <span class="badge bg-info badge-glow rounded-pill ms-auto">
-                                   {{ $post->count()}} 
-                              </span> 
+                                   {{ $post->count()}}
+                              </span>
                               <span class="badge bg-light-success  rounded-pill ms-auto">
                                   results found in {{$language->name}}
                               </span>
@@ -62,20 +62,17 @@ Vaidic Yoddha
                                    <span >
                                         views
                                         <span class="badge badge-light-info   ms-auto">{{views($item)->count()}}</span>
-                                    </span> 
+                                    </span>
                                     <span >
                                         Comments
                                         <span class="badge badge-light-info   ms-auto">{{ $item->comments()->count()}}</span>
-                                    </span> 
-                                    <span >
-                                        Likes
-                                        <span class="badge badge-light-info   ms-auto">23</span>
-                                    </span>       
+                                    </span>
+
                                       <span class="float-end badge badge-light-dark">
-                                       <a href="{{ url('author/'.$item->author->id) }}">Author -{{ $item->author->name }}</a> 
-                                      </span>           
+                                       <a href="{{ url('author/'.$item->author->id) }}">Author -{{ $item->author->name }}</a>
+                                      </span>
                                   </div>
-                                
+
                                 </div>
                             </div>
                        @endforeach
@@ -108,7 +105,7 @@ Vaidic Yoddha
             <!--/ Statistics Card -->
 
             <!-- side Card -->
-           @include('inc.sidebar')  
+           @include('inc.sidebar')
             <!--/ Side Card -->
 
           </div>
@@ -165,5 +162,5 @@ Vaidic Yoddha
           </div>
         </section>
 
-    
+
 @endsection

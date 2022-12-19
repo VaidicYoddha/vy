@@ -23,12 +23,12 @@ Vaidic Yoddha
                             <h3 class="text-danger h3">
                             Category :  {{$category->name}}
                             </h3>
-                          </div>                
+                          </div>
                             <div class="col-md-6 col-lg-4">
-                              <h6> 
+                              <h6>
                                 <span class="badge bg-info badge-glow rounded-pill ms-auto">
-                                    {{ $post->count()}} 
-                                </span> 
+                                    {{ $post->count()}}
+                                </span>
                                 <span class="badge bg-light-success  rounded-pill ms-auto">
                                     results found in {{$category->name}}
                                 </span>
@@ -51,28 +51,25 @@ Vaidic Yoddha
                                             {{ $item->title }}
                                           </a>
                                       </h3>
-                                
+
                                      </div>
                                   <div class="card-body">
-                        
+
                                     <a href="{{ url('post/'.$item->slug.'/'.$item->id) }}" class="floar-end btn btn-flat-primary"> Read More</a>
                                    <span >
                                         views
                                         <span class="badge badge-light-info   ms-auto">{{views($item)->count()}}</span>
-                                    </span> 
+                                    </span>
                                     <span >
                                         Comments
                                         <span class="badge badge-light-info   ms-auto">{{ $item->comments()->count()}}</span>
-                                    </span> 
-                                    <span >
-                                        Likes
-                                        <span class="badge badge-light-info   ms-auto">23</span>
-                                    </span>       
+                                    </span>
+
                                       <span class="float-end badge badge-light-dark">
-                                       <a href="{{ url('author/'.$item->author->id) }}">Author -{{ $item->author->name }}</a> 
-                                      </span>            
+                                       <a href="{{ url('author/'.$item->author->id) }}">Author -{{ $item->author->name }}</a>
+                                      </span>
                                   </div>
-                               
+
                                 </div>
                             </div>
                        @endforeach
@@ -105,7 +102,7 @@ Vaidic Yoddha
             <!--/ Statistics Card -->
 
             <!-- side Card -->
-           @include('inc.sidebar')  
+           @include('inc.sidebar')
             <!--/ Side Card -->
 
           </div>
@@ -162,5 +159,5 @@ Vaidic Yoddha
           </div>
         </section>
 
-    
+
 @endsection
