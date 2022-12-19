@@ -123,17 +123,20 @@
                                 <i data-feather="share-2" class="font-medium-5 text-body cursor-pointer" role="button"
                                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
                                 <div class="dropdown-menu dropdown-menu-end">
-                                    <a href="#" class="dropdown-item" target="_blank">
+                                    <a href="#" class="dropdown-item" id="facebook-btn" target="_blank">
                                         <i data-feather="facebook"></i> Facebook
                                     </a>
-                                    <a href="#" class="dropdown-item" target="_blank">
+                                    <a href="#" class="dropdown-item" id="twitter-btn" target="_blank">
                                         <i data-feather="twitter"></i> twitter
                                     </a>
-                                    <a href="#" class="dropdown-item" target="_blank">
+                                    <a href="#" class="dropdown-item" id="instagram-btn" target="_blank">
                                         <i data-feather="instagram"></i> instagram
                                     </a>
-                                    <a href="#" class="dropdown-item" target="_blank">
+                                    <a href="#" class="dropdown-item" id="whatsapp-btn" target="_blank">
                                         <i class="fab fa-whatsapp"></i> whatsapp
+                                    </a>
+                                    <a href="#" class="dropdown-item" id="telegram-btn" target="_blank">
+                                        <i class="fab fa-telegram"></i> Telegram
                                     </a>
                                 </div>
                             </div>
@@ -448,6 +451,46 @@
 
 </script>
 
+<script>
+
+    // Social Share links.
+  const gmailBtn = document.getElementById('gmail-btn');
+  const facebookBtn = document.getElementById('facebook-btn');
+  const twitterBtn = document.getElementById('twitter-btn');
+  const whatsappBtn = document.getElementById('whatsapp-btn');
+  const telegramBtn = document.getElementById('telegram-btn');
+  const socialLinks = document.getElementById('social-links');
+
+  // posturl posttitle
+  let postUrl = encodeURI(document.location.href);
+  let postTitle = encodeURI('{{$post->title}}');
+
+  facebookBtn.setAttribute("href",`https://www.facebook.com/sharer.php?u=${postUrl}`);
+  twitterBtn.setAttribute("href", `https://twitter.com/share?url=${postUrl}&text=${postTitle}`);
+  whatsappBtn.setAttribute("href",`whatsapp://send?text=${postTitle} ${postUrl}`);
+  telegramBtn.setAttribute("href",`https://t.me/share/url?url=${postUrl}&text=${postTitle}`);
+  gmailBtn.setAttribute("href",`https://mail.google.com/mail/?view=cm&su=${postTitle}&body=${postUrl}`);
+
+
+  // Button
+  const shareBtn = document.getElementById('shareBtn');
+  if(navigator.share){
+    shareBtn.style.display = 'block';
+    socialLinks.style.display = 'none';
+    shareBtn.addEventListener('click', ()=>{
+      navigator.share({
+        title: postTitle,
+        url:postUrl
+      }).then((result) => {
+        alert('Thank You for Sharing.')
+      }).catch((err) => {
+        console.log(err);
+      });;
+    });
+  }else{
+
+  }
+</script>
 
 @endsection
 

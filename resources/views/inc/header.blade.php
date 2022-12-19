@@ -138,7 +138,7 @@
                 id="dropdown-user" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="user-nav d-sm-flex d-none"><span class="user-name fw-bolder">Login</span><span
                     class="user-status">Register</span></div><span class="avatar"><img class="round"
-                    src="{{ asset('/storage/logo')}}/logo.png" alt="avatar" height="40"
+                    src="{{ asset('/front/logo')}}/logo.png" alt="avatar" height="40"
                     width="40"><span class="avatar-status-offline"></span></span>
               </a>
                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user">
