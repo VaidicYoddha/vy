@@ -1,8 +1,13 @@
 @extends('master')
 
+{{-- @section('url')
+{{ env('APP_URL') }}
+
+@endsection --}}
+
 @section('title')
-{{$post->category->name}} |
-{{ isset($post->title) ? $post->title : ''}}
+{{ env('APP_NAME') }} - {{$post->title}} |
+
 @endsection
 
 @section('content')
@@ -100,14 +105,7 @@
                                         <div class="text-body align-middle">{{ $post->comments()->count()}}</div>
                                     </a>
                                 </div>
-                                <div class="d-flex align-items-center me-1">
-                                    <a href="#" class="me-50">
-                                        <i class="fas fa-thumbs-up font-medium-5 text-body align-middle"></i>
-                                    </a>
-                                    <a href="#">
-                                        <div class="text-body align-middle">139</div>
-                                    </a>
-                                </div>
+
                                 <div class="d-flex align-items-center me-1">
                                     <a href="#" class="me-50">
                                         <i class="fas fa-eye font-medium-5 text-body align-middle"></i>
@@ -465,7 +463,7 @@
   let postUrl = encodeURI(document.location.href);
   let postTitle = encodeURI('{{$post->title}}');
 
-  facebookBtn.setAttribute("href",`https://www.facebook.com/sharer.php?u=${postUrl}`);
+  facebookBtn.setAttribute("href",`https://www.facebook.com/sharer/sharer.php?u=${postUrl}`);
   twitterBtn.setAttribute("href", `https://twitter.com/share?url=${postUrl}&text=${postTitle}`);
   whatsappBtn.setAttribute("href",`whatsapp://send?text=${postTitle} ${postUrl}`);
   telegramBtn.setAttribute("href",`https://t.me/share/url?url=${postUrl}&text=${postTitle}`);
@@ -491,6 +489,11 @@
 
   }
 </script>
+
+FB.ui({
+    method: 'feed',
+    link: 'https://developers.facebook.com/docs/'
+  }, function(response){});
 
 @endsection
 

@@ -54,7 +54,7 @@ class HomeController extends Controller
         $category = Category::all();
         $tags = Tag::all()->pluck('name','id');
 
-        $expiresAt = now()->addHours(3);
+        $expiresAt = now()->addHours(1);
 
         views($post)
             ->cooldown($expiresAt)

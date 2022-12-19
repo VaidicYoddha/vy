@@ -9,10 +9,10 @@
      <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="og:type" content="website" />
-  <meta property="og:title" content="Vaidic Yoddha" />
-  <meta property="og:url" content="https://www.vaidicyoddha.in/" />
+  <meta property="og:title" content={{ env('APP_NAME') }} @yield('title') />
+  <meta property="og:url" content={{ env('APP_URL') }} @yield('url')>
   <meta property="og:image" itemprop="image" content="{{ asset('front/logo/thumb.jpg') }}">
-  <title> @yield('title')</title>
+  <title> {{ env('APP_NAME') }} @yield('title')</title>
 
 
   @yield('style')

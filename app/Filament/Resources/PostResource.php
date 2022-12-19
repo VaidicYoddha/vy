@@ -58,7 +58,7 @@ class PostResource extends Resource
 
                                 TinyEditor::make('content')
                                     ->required()
-                                    ->columnSpan('full'),
+                                    ->columnSpan('full')->height(500),
 
                                 Forms\Components\RichEditor::make('ref')
                                 ->label('Refreneces')
