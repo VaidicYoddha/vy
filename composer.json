@@ -9,6 +9,7 @@
         "alperenersoy/filament-export": "^0.1.7",
         "barryvdh/laravel-dompdf": "^2.0",
         "bezhansalleh/filament-shield": "V1.1.12",
+        "cviebrock/eloquent-sluggable": "^9.0",
         "cyrildewit/eloquent-viewable": "^6.1",
         "filament/filament": "^2.0",
         "filament/notifications": "^2.0",

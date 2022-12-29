@@ -85,7 +85,7 @@ return [
     'exclude' => [
         'enabled' => true,
         'pages' => [],
-        'widgets' => ["AccountWidget","FilamentInfoWidget"],
+        'widgets' => ["AccountWidget","FilamentInfoWidget","AdminpanelOverview","StatsOverview","ArshBookOverview"],
         'resources' => [],
     ],
 

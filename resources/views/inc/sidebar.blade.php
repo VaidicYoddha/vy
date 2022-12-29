@@ -141,12 +141,12 @@
                           <i class="fab fa-twitter"></i>
                         </button>
                       </a>
-                      <a href="https://www.facebook.com/vaidicyoddha" target="blank">
+                      <a href="https://www.instagram.com/vaidicyoddha/" target="blank">
                         <button type="button" class="btn btn-outline-light instagram">
                           <i class="fab fa-instagram"></i>
                         </button>
                       </a>
-                      <a href="https://www.facebook.com/vaidicyoddha" target="blank">
+                      <a href="https://www.youtube.com/@vaidicyoddha" target="blank">
                         <button type="button" class="btn btn-outline-light" style="background-color: #FF0000;">
                           <i class="fab fa-youtube"></i>
                         </button>
@@ -174,13 +174,13 @@
                     <div class="mt-75">
                       @foreach ($recentposts as $item)
                       <div class="d-flex mb-2">
-                        <a href="{{ url('post/'.$item->slug) }}" class="me-2">
+                        <a href="{{ url('post/'.$item->slug.'/'.$item->id) }}" class="me-2">
                           <img class="rounded" src="https://ui-avatars.com/api/?name={{$item->title }}&color=ff0000&bold=true" width="100"
                             height="70" alt="Recent Post Pic" />
                         </a>
                         <div class="blog-info">
                           <h6 class="blog-recent-post-title">
-                            <a href="{{ url('post/'.$item->slug) }}" class="text-body-heading">{!! Str::limit($item->title, 35) !!}</a>
+                            <a href="{{ url('post/'.$item->slug.'/'.$item->id) }}" class="text-body-heading">{!! Str::limit($item->title, 35) !!}</a>
                           </h6>
                           <div class="text-muted mb-0">{{ $item->created_at->format('d-m-Y')}}</div>
                         </div>

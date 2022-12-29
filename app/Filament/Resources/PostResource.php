@@ -53,6 +53,7 @@ class PostResource extends Resource
 
                                 Forms\Components\TextInput::make('slug')
                                     ->required()
+                                    ->disabled()
                                     //->helperText('English में लिखे साथ में हर एक शब्द के बिच (-) यह ऐड करके एकसाथ टाइटल लिखे |')
                                     ->unique(Post::class, 'slug', ignoreRecord: true),
 

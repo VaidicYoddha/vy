@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\blog\Tag;
 use App\Models\blog\Post;
 use App\Models\All\Author;
+use Illuminate\Support\Str;
 use App\Models\All\Language;
 use Illuminate\Http\Request;
 use App\Models\blog\Category;
@@ -125,7 +126,7 @@ class HomeController extends Controller
                       ->orwhere('created_by', 'like', '%' .$search. '%' )
                       ->orderBy('id')->paginate(10)
                       ->map(function ($row) use ($search) {
-                        $row->title = preg_replace('/(' . $search . ')/i', "<mark> <b>$1</b></mark>", $row->title);
+                        //$row->title = preg_replace('/(' . $search . ')/i', "<mark> <b>$1</b></mark>", $row->title);
                         $row->content = preg_replace('/(' . $search . ')/i', "<span><mark><b> $1</b></mark><span/>", $row->content);
                         $row->ref = preg_replace('/(' . $search . ')/i', "<mark> <b>$1</b></mark>", $row->ref);
                         $row->created_by = preg_replace('/(' . $search . ')/i', "<span><mark><b> $1</b></mark><span/>", $row->created_by);
@@ -143,5 +144,54 @@ class HomeController extends Controller
 
         return view('ft.blog.sitemap', compact('posts'));
     }
+
+    // public static function createSlug($title, $model, $id = 0)
+    // {
+    //     // Normalize the title
+    //     $slug = Str::slug($title);
+    //     // Get any that could possibly be related.
+    //     // This cuts the queries down by doing it once.
+    //     $allSlugs = self::getRelatedSlugs($slug, $model, $id);
+    //     // If we haven't used it before then we are all good.
+    //     if (!$allSlugs->contains('slug', $slug)) {
+    //         return $slug;
+    //     }
+    //     // Just append numbers like a savage until we find not used.
+    //     for ($i = 1; $i <= 50; $i++) {
+    //         $sufix = \substr(str_shuffle('abcdefghijklmnopqrstuvwxyz'), 0, 4);
+    //         $newSlug = $slug . '-' . $sufix;
+    //         if (!$allSlugs->contains('slug', $newSlug)) {
+    //             return $newSlug;
+    //         }
+    //     }
+    //     throw new \Exception('Can not create a unique slug');
+    // }
+
+    // public static function makeHindiSlug($string, $separator = '-')
+    // {
+    //     if (is_null($string)) {
+    //         return "";
+    //     }
+
+    //     // Remove spaces from the beginning and from the end of the string
+    //     $string = trim($string);
+
+    //     // Remove multiple dashes or whitespaces
+    //     $string = preg_replace("/[\s-]+/", " ", $string);
+
+    //     // Convert whitespaces and underscore to the given separator
+    //     $string = preg_replace("/[\s_]/", $separator, $string);
+
+    //     return $string;
+    // }
+
+
+
+    // protected static function getRelatedSlugs($slug, $model, $id = 0)
+    // {
+    //     return $model::select('slug')->where('slug', 'like', $slug . '%')
+    //         ->where('id', '<>', $id)
+    //         ->get();
+    // }
 
 }
