@@ -103,10 +103,10 @@
                 </span>
               </a>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user">
-                {{-- <a class="dropdown-item"
-                  href="page-profile.html"><i class="me-50 "  data-feather="user"></i>
+                <a class="dropdown-item"
+                  href="{{ route('profile') }}"><i class="me-50 "  data-feather="user"></i>
                   Profile
-                </a> --}}
+                </a>
                       <a class="dropdown-item nav-link-style"><i class="ficon" data-feather="moon"> </i> Dark/Light</a>
                 <div class="dropdown-divider"></div>
                 @if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2' )

@@ -10,11 +10,12 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="og:type" content="website" />
   <meta property="og:title" content={{ env('APP_NAME') }} @yield('title') />
-  <meta property="og:url" content={{ env('APP_URL') }} @yield('url')>
+  <meta property="og:url" content= "https://www.vaidicyoddha.in">
+  <meta property="og:description"   content="Vaidic Yoddha" />
   <meta property="og:image" itemprop="image" content="{{ asset('front/logo/thumb.jpg') }}">
   <title> {{ env('APP_NAME') }} @yield('title')</title>
 
-
+<link rel="canonical" href="@yield('title')">
   @yield('style')
    <link rel="icon" href="{{ asset('front/logo/favicon.png') }}" type="image/png">
   <link rel="apple-touch-icon" href="{{ asset('/front')}}/app-assets/images/ico/apple-icon-120.html">
@@ -74,6 +75,28 @@
 <body class="horizontal-layout horizontal-menu  navbar-floating footer-static  antialiased" data-open="hover"
   data-menu="horizontal-menu" data-col="">
 
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '698106734861794',
+        xfbml      : true,
+        version    : 'v14.0'
+      });
+      FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v13.0&appId=698106734861794&autoLogAppEvents=1" nonce="gDcjeLea"></script>
+
             {{-- {{ $slot }} --}}
 
         {{-- @livewire('notifications') --}}
@@ -84,7 +107,7 @@
 
 
   <!-- BEGIN: Content-->
-  <div class="app-content content ">
+  <div class="app-content content">
     <div class="content-overlay"></div>
     <div class="header-navbar-shadow"></div>
     <div class="content-wrapper container-xxl p-0">

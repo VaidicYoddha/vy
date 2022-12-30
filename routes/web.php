@@ -4,6 +4,7 @@ use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\SptestController;
 use App\Http\Controllers\Admin\ManuController;
 use App\Http\Controllers\Admin\GranthController;
@@ -30,6 +31,9 @@ use App\Http\Controllers\Admin\Sp\SpchapterController;
 Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Route::get('/home/profile', [UserController::class, 'myprofile'])->name('profile')->middleware(['auth','verified']);
+Route::post('/profile-update', [UserController::class, 'profileupdate'])->middleware(['auth','verified']);
 
 Route::get('/sitemap', [HomeController::class, 'postlist']);
 Route::get('/post/{post_slug}/{id}', [HomeController::class, 'singlepost']);

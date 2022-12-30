@@ -11,7 +11,7 @@ class UserController extends Controller
 {
     public function myprofile()
     {
-        return view('front.user.profile');
+        return view('ft.profile');
     }
 
     public function profileupdate(Request $request)
@@ -23,7 +23,7 @@ class UserController extends Controller
 
         $user->update();
 
-        return redirect('/profile' )->with('success', 'Profile Updated Successfully.');
+        return redirect('/home/profile' )->with('success', 'Profile Updated Successfully.');
 
 
 
