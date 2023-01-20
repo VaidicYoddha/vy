@@ -29,8 +29,8 @@
                 <div class="card-content collapse show">
                   <div class="card-body">
                     <div class=" mb-1">
-
-                      <select class="select2 form-select" onchange="location.href=this.value;" id="select2-basic">
+                        <select class="select2 form-select" onchange="location.href=this.value;" id="select2-basic">
+                            <option value="">Select Category</option>
                         @foreach ($cats as $item)
                             <option value=" {{ route('category.slug',$item->slug)}}">{{$item->name}}</option>
                         @endforeach
@@ -101,7 +101,15 @@
                 </div>
                 <div class="card-content collapse show">
                   <div class="card-body">
-                    <h4>
+                    <div class=" mb-1">
+                        <select class="select2 form-select" onchange="location.href=this.value;" id="select2-basic">
+                            <option value="">Select Tag</option>
+                          @foreach ($tags as $item)
+                              <option value=" {{ route('tag.slug',$item->slug)}}">{{$item->name}}</option>
+                          @endforeach
+                        </select>
+                      </div>
+                    <h4 class="p-1">
                       @foreach ($tags as $item)
                         <a href="{{ url('tag/'.$item->slug) }}">
                           <span href="" class="badge badge-glow bg-warning cursor-pointer mb-1">

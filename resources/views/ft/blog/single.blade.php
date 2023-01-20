@@ -79,7 +79,7 @@
                                     aria-labelledby="headingHoverTwo" data-bs-parent="#accordionHover">
                                     <div class="accordion-body">
                                         @foreach ($post->tags as $tag)
-                                        <a href="">
+                                        <a href="{{ url('tag/'.$tag->slug) }}">
                                             <span class="badge badge-glow bg-warning cursor-pointer mb-1">
                                                 {{$tag->name}}
                                             </span>

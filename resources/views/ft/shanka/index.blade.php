@@ -57,7 +57,7 @@ Vaidic Yoddha
                 <div class="card border border-dark ">
 
                     <div class="card-content">
-                        <div class="card-body text-danger fw-bolder email-app-list">
+                        <div class="card-body text-dark fw-bolder email-app-list">
 
                             <div class="tab-content">
 
@@ -80,12 +80,13 @@ Vaidic Yoddha
                                                             {{ $item->shanka }}
                                                             </button>
                                                         </h2>
-                                                        <div id="accordionMarginOne{{$item->id}}" class="accordion-collapse collapse border border-dark border-5"
+                                                        <div id="accordionMarginOne{{$item->id}}" class="accordion-collapse collapse  border border-dark border-5"
                                                             aria-labelledby="headingMarginOne" data-bs-parent="#accordionMargin">
                                                             <div class="accordion-body ">
-
-                                                              Samadhan karta -  {{ $item->author->name }}
-                                                                <hr>
+                                                              <h6 class="fw-bolder">
+                                                              समाधान कर्ता:  -  {{ $item->author->name }}
+                                                               </h6>
+                                                               <hr>
 
                                                                 {!! $item->samadhan !!}
 

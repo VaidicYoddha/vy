@@ -154,7 +154,7 @@ class Post extends Model implements Viewable
         throw new \Exception('Can not create a unique slug');
     }
 
-    public static function makeHindiSlug($string, $separator = '-')
+    public static function slug($string, $separator = '-')
     {
         if (is_null($string)) {
             return "";
